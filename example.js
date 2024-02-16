@@ -8,7 +8,7 @@ function getLength(value) {
 getLength('6')
 getLength(4)
 getLength([1, 2, 6])
-
+getLength()
 
 function getLength(value) {
     const valueLength = value && value.length !== undefined ? value.length : 0;
