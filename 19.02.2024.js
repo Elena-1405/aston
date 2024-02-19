@@ -35,11 +35,11 @@ getLength([1, 2, 6]) //3
    
     if ((isObjects && !compare(value1, value2)) ||
     (!isObjects && value1 !== value2)
-    ) {
-    return false;
+    ){
+        return false;
     }
     }
-    return true;
+        return true;
     };
     
     const isObject = (object) => {
