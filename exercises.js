@@ -43,10 +43,10 @@ getCount()
 
 //
 
-let a = 'Hello';
-if (1 === 1) {
-  console.log(a);
-  //var a = 'World';
-}
+// let a1 = 'Hello';
+// if (1 === 1) {
+//   console.log(a1);
+//   //var a1 = 'World';
+// }
 //Что будет в консоле
 //Что измениться если закомментировать строчку 68

@@ -101,25 +101,25 @@ const counter3 = new Object();
 
 //2. Function Expression:
 
-   const myFunction = function() {
+   const makeCounter2 = function() {
      // function body
    };
    
 //3. Arrow Function (ES6+):
 
-   const myFunction = function() {
+   const makeCounter3 = function() {
      // function body
    };
    
 //4. Named Function Expressions (NFE)
 
-   const myFunction = function myNamedFunction() {
+   const makeCounter4 = function makeCounterInnerRef() {
      // function body
    };
 
 //5. Function Constructor:
 
-   const myFunction = new Function('arg1', 'arg2', 'return arg1 + arg2;');
+   const makeCounter5 = new Function('arg1', 'arg2', 'return arg1 + arg2;');
 
 //6.  Immediately Invoked Function Expression (IIFE):
 
@@ -128,50 +128,77 @@ const counter3 = new Object();
    })();
 
 //7. Generator Function (ES6+):
-   function* myGenerator() {
+   function* makeCounter7() {
      // function body
    }
 
 //8. Async Function (ES2017+):
 
-   const myAsyncFunction = async () => {
+   const makeCounter8 = async () => {
      // async function body
    };
    
 //9. Метод внутри обьекта
 
    const myObject = {
-     myMethod() {
+     makeCounter9() {
        // method body
      }
    };
 
 //10. Метод внутри класса
 
-    class MyClass {
-      myMethod() {
+    class MyClassFunction {
+      makeCounter10() {
         // method body
       }
     }
     
-   
-   
-   
-   
-   
-
-
-
-
-   
 
 //Продвинутое:
 //Задание 1 – Развернуть строку в обратном направлении при помощи методов массивов:
-//function reverseStr(str) {
-//return …
-//}
+
+    function reverseStr(str) {
+        return str.split('')
+                .reverse()
+                .join('')
+    }
+        console.log(reverseStr('hello'))
 
 //Задание 2– Написать функцию глубокого сравнения двух объектов:
-//const obj1 = { here: { is: 'on', other: '3' }, object: Z };
-//const obj2 = { here: { is: 'on', other: '2' }, object: Z };
 //const deepEqual = (obj1, obj2) => {};
+
+const obj1 = { here: { is: 'on', other: '3' }, object: 'Z' };
+const obj2 = { here: { is: 'on', other: '2' }, object: 'Z'};
+
+const deepEqual = (obj1, obj2) => {
+  // Check if both values are objects
+  if (isObject(obj1) && isObject(obj2)) {
+    // Get keys of both objects
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+
+    // Check if the number of keys is the same
+    if (keys1.length !== keys2.length) {
+      return false;
+    }
+
+    // Iterate through keys and recursively compare values
+    for (const key of keys1) {
+      if (!deepEqual(obj1[key], obj2[key])) {
+        return false;
+      }
+    }
+
+    return true;
+  } else {
+    // Compare non-object values
+    return obj1 === obj2;
+  }
+};
+
+const isObject = (object) => {
+  return object !== null && typeof object === "object";
+};
+
+console.log(deepEqual(obj1, obj2)); // Output: false

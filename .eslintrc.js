@@ -1,32 +1,25 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
+    'env': {
+        'browser': true,
+        'es2021': true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "overrides": [
+    'extends': 'eslint:recommended',
+    'overrides': [
         {
-            "env": {
-                "node": true
+            'env': {
+                'node': true
             },
-            "files": [
-                ".eslintrc.{js,cjs}"
+            'files': [
+                '.eslintrc.{js,cjs}'
             ],
-            "parserOptions": {
-                "sourceType": "script"
+            'parserOptions': {
+                'sourceType': 'script'
             }
         }
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    'parserOptions': {
+        'ecmaVersion': 'latest'
     },
-    "plugins": [
-        "react"
-    ],
     rules: {
         'react/jsx-filename-extension': 0,
         'jsx-a11y/click-events-have-key-events': 0,

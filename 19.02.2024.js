@@ -40,7 +40,7 @@ getLength([1, 2, 6]) //3
     }
     }
         return true;
-    };
+    }
     
     const isObject = (object) => {
     return object != null && typeof object === "object";
