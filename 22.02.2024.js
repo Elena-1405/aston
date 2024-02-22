@@ -172,18 +172,19 @@ const obj1 = { here: { is: 'on', other: '3' }, object: 'Z' };
 const obj2 = { here: { is: 'on', other: '2' }, object: 'Z'};
 
 const deepEqual = (obj1, obj2) => {
-  // Check if both values are objects
+  // Проверяем, являются ли обьектами
   if (isObject(obj1) && isObject(obj2)) {
-    // Get keys of both objects
+
+    // и получаем ключи обоих обьектов
     const keys1 = Object.keys(obj1);
     const keys2 = Object.keys(obj2);
 
-    // Check if the number of keys is the same
+    // Проверяем одинаковое ли количество ключей
     if (keys1.length !== keys2.length) {
       return false;
     }
 
-    // Iterate through keys and recursively compare values
+    // проходимся по ключам и сравниваем значения по каждому ключу с пом.рекурсии 
     for (const key of keys1) {
       if (!deepEqual(obj1[key], obj2[key])) {
         return false;
@@ -192,13 +193,14 @@ const deepEqual = (obj1, obj2) => {
 
     return true;
   } else {
-    // Compare non-object values
+    // если значения не явл. объектами, сравниваем напрямую
     return obj1 === obj2;
   }
 };
 
+// вспомогательная ф-ция для проверки; явл ли значение объектом
 const isObject = (object) => {
   return object !== null && typeof object === "object";
 };
 
-console.log(deepEqual(obj1, obj2)); // Output: false
+    console.log(deepEqual(obj1, obj2)); // Output: false    
