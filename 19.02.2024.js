@@ -55,4 +55,6 @@ getLength([1, 2, 6]) //3
     const tree4 = { value: 1, left: { value: 3 }, right: { value: 5} };
     console.log(compare(tree3, tree4)); //false
 
-    
+  
+
+
