@@ -1,3 +1,5 @@
+//22.02.2024
+
 //Задание 1 – Создать объект counter всеми возможными способами.
 
 //1.  Литеральная нотация
@@ -45,7 +47,7 @@ const counter3 = new Object();
 //8. JSON.parse():
    
     const jsonString = '{"key":"value","anotherKey":42}';
-   const counter8 = JSON.parse(jsonString);
+    const counter8 = JSON.parse(jsonString);
    
 
 //Задание 2 – Скопировать объект counter всеми возможными способами;
@@ -68,9 +70,10 @@ const counter3 = new Object();
 //4. Object.create()
 
    const originalObj4 = { key: 'value', anotherKey: 1 };
-   const counter12 = Object.create(Object.getPrototypeOf(originalObj4), Object.getOwnPropertyDescriptors(originalObj4));
+   const counter12 = Object.create(Object.getPrototypeOf(originalObj4), Object
+   .getOwnPropertyDescriptors(originalObj4));
    
-//5.  с помощью сторонних библиотек, например  lodash  
+//5.  с помощью сторонних библиотек, например  lodash, требуется доп.установка 
 
    const originalObj = { key: 'value', anotherKey: 1 };
    const counter13 = _.cloneDeep(originalObj);
@@ -78,9 +81,10 @@ const counter3 = new Object();
 //6. structuredClone() new method
 
     const original = { key: 'value', anotherKey: 1 };
-    original.itself = original;
+    //original.itself = original; отсылка к оригиналу если нужна
 
     const counter14 = structuredClone(original);
+    console.log(counter14)//{ key: 'value', anotherKey: 1 }
 
 //7. Функция-конструктор
 
@@ -204,4 +208,4 @@ const isObject = (object) => {
   return object !== null && typeof object === "object";
 };
 
-    console.log(deepEqual(obj1, obj2)); // Output: false    
+    console.log(deepEqual(obj1, obj2)); // false    
