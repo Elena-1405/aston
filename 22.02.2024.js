@@ -166,7 +166,8 @@ const counter3 = new Object();
         console.log(reverseStr('hello'))
 
 //Задание 2– Написать функцию глубокого сравнения двух объектов:
-//const deepEqual = (obj1, obj2) => {};
+//const deepEqual = (obj1, obj2) => {}; 
+//(для себя написала пояснения)
 
 const obj1 = { here: { is: 'on', other: '3' }, object: 'Z' };
 const obj2 = { here: { is: 'on', other: '2' }, object: 'Z'};
