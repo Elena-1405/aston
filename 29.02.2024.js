@@ -172,4 +172,30 @@ const anotherPerson1 = new AnotherPerson('Alice', 30);
 
 person1.sayHello(); // Output: Hello, my name is John and I am 25 years old.
 anotherPerson1.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
-anotherPerson1.logInfo(); // Output: Additional info from AnotherPerson
+anotherPerson1.logInfo(); // Output: We are the champions.
+
+//Использование классов:
+
+class Person2 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+class AnotherPerson2 extends Person2 {
+  logInfo() {
+    console.log('We are the champions.');
+  }
+}
+
+const person2 = new Person2('John', 25);
+const anotherPerson2 = new AnotherPerson2('Alice', 30);
+
+person2.sayHello(); // Output: Hello, my name is John and I am 25 years old.
+anotherPerson2.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
+anotherPerson2.logInfo(); // Output: We are the champions.
