@@ -142,4 +142,34 @@ const quickSort = (arr, start, end) => {
   }
 };
 
-//2.
+//2. Создать объект Person несколькими способами, после создать объект AnotherPerson, чтобы в нём были
+// доступны методы объекта Person. Добавить метод logInfo чтоб он был доступен всем объектам.
+
+// Функция-конструктор
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.sayHello = function () {
+  console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+};
+
+function AnotherPerson(name, age) {
+  Person.call(this, name, age);
+}
+
+AnotherPerson.prototype = Object.create(Person.prototype);
+AnotherPerson.prototype.constructor = AnotherPerson;
+
+AnotherPerson.prototype.logInfo = function () {
+  console.log('We are the champions.');
+};
+
+const person1 = new Person('John', 25);
+const anotherPerson1 = new AnotherPerson('Alice', 30);
+
+person1.sayHello(); // Output: Hello, my name is John and I am 25 years old.
+anotherPerson1.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
+anotherPerson1.logInfo(); // Output: Additional info from AnotherPerson
