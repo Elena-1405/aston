@@ -273,22 +273,3 @@ function firstSum(arr, total) {
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const total = 13;
 console.log(firstSum(arr, total)); //[ 4, 9 ]
-
-// Также имеется другое решение, оно является наиболее удачным. Сложность оценивается как O(n). Но, к сожалению, оно не доработано: возвращает [6, 7] вместо первой пары.
-// function firstSum(arr, total) {
-//   const result = new Set();
-
-//   for (const num of arr) {
-//     const difference = total - num;
-
-//     if (result.has(difference)) {
-//       return [difference, num];
-//     }
-
-//     result.add(num);
-//   }return []
-// }
-
-// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-// const total = 13;
-// console.log(firstSum(arr, total));
