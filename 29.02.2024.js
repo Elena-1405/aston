@@ -199,3 +199,47 @@ const anotherPerson2 = new AnotherPerson2('Alice', 30);
 person2.sayHello(); // Output: Hello, my name is John and I am 25 years old.
 anotherPerson2.sayHello(); // Output: Hello, my name is Alice and I am 30 years old.
 anotherPerson2.logInfo(); // Output: We are the champions.
+
+//3. Создать класс SuperPerson c get и set для поля name и конструктором , сделать класс наследник от
+// класса SuperPerson.
+
+class SuperPerson {
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
+
+  // Геттеры для получения значения поля name
+  get name() {
+    return this._name;
+  }
+  get age() {
+    return this._age;
+  }
+
+  // Сеттеры для установки значения поля name
+  set name(newName) {
+    this._name = newName;
+  }
+  set age(newAge) {
+    this._age = newAge;
+  }
+}
+
+class ChildPerson extends SuperPerson {
+  constructor(name, age, toy) {
+    super(name, age);
+    this.toy = toy;
+  }
+}
+
+// Пример использования
+const superPerson = new SuperPerson('John', 30);
+console.log(superPerson.name + ', ' + superPerson.age); // John, 30
+
+superPerson.name = 'Jane';
+superPerson.age = 29;
+console.log(superPerson.name + ', ' + superPerson.age); //  Jane, 29
+
+const childPerson = new ChildPerson('Bob', 5, 'TeddyBear');
+console.log(childPerson.name + ', ' + childPerson.age + ', ' + childPerson.toy); //  Bob, 5, TeddyBear
