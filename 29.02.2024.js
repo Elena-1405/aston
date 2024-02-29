@@ -209,7 +209,7 @@ class SuperPerson {
     this._age = age;
   }
 
-  // Геттеры для получения значения поля name
+  // Геттеры для получения значения поля name/age
   get name() {
     return this._name;
   }
@@ -217,7 +217,7 @@ class SuperPerson {
     return this._age;
   }
 
-  // Сеттеры для установки значения поля name
+  // Сеттеры для установки значения поля name/age
   set name(newName) {
     this._name = newName;
   }
