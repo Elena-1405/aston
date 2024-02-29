@@ -243,3 +243,52 @@ console.log(superPerson.name + ', ' + superPerson.age); //  Jane, 29
 
 const childPerson = new ChildPerson('Bob', 5, 'TeddyBear');
 console.log(childPerson.name + ', ' + childPerson.age + ', ' + childPerson.toy); //  Bob, 5, TeddyBear
+
+// Продвинутый:
+// 1. Написать функцию
+// function firstSum = (arr, total) => {//Решение
+// },
+// которая вернет массив с первой парой чисел, сумма которых равна total :const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const total = 13;
+// firstSum(arr, total) //result = [4, 9]
+// 2. Оценить сложность вашего алгоритма для функции firstSum (хотя бы пару строк в качестве объяснения).
+
+//Данное решение достаточно энергозатратно, поскольку задействует 2 цикла. Сложность оценивается как O(n^2). При увеличении массива время на выполнение будет увеличиваться квадратично. Способ подойдет при работе с небольшими массивами.
+
+function firstSum(arr, total) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === total) {
+        result.push([arr[i], arr[j]]);
+        return result[0];
+      }
+    }
+  }
+
+  return result[0] || [];
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const total = 13;
+console.log(firstSum(arr, total)); //[ 4, 9 ]
+
+// Также имеется другое решение, оно является наиболее удачным. Сложность оценивается как O(n). Но, к сожалению, оно не доработано: возвращает [6, 7] вместо первой пары.
+// function firstSum(arr, total) {
+//   const result = new Set();
+
+//   for (const num of arr) {
+//     const difference = total - num;
+
+//     if (result.has(difference)) {
+//       return [difference, num];
+//     }
+
+//     result.add(num);
+//   }return []
+// }
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const total = 13;
+// console.log(firstSum(arr, total));
