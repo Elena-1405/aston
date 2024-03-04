@@ -101,7 +101,7 @@ function indexDelay(array) {
     {
       setTimeout(() => {
         console.log(i);
-      }, 3000 * i)
+      }, 3000*(i+1));
     }
   }
 }
