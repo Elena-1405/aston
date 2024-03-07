@@ -27,6 +27,7 @@
 // helper.pageIndex(20); // -1
 // helper.pageIndex(-10); //-1
 
+//
 function pattern(n) {
   let upperPart = [];
   // строка
