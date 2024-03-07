@@ -27,25 +27,27 @@
 // helper.pageIndex(-10); //-1
 
 function pattern(n) {
-  let upper = [];
+  let upperPart = [];
+  // строка
   for (let i = 1; i <= n; i++) {
-    // строка
     let row = ' '.repeat(n - i);
+    // числа на возр.
     for (let j = 1; j < i; j++) {
-      // числа
       row += j;
     }
-
+    // числа на убыв.
     for (let j = i; j >= 1; j--) {
       row += j;
     }
     row += ' '.repeat(n - i);
-    upper.push(row);
+    upperPart.push(row);
   }
-  let lower = [...upper].reverse();
-  lower.shift();
-  return [...upper, ...lower].join('\n');
+  //создаем нижнюю часть и соединяем
+  let lowerPart = [...upperPart].reverse();
+  lowerPart.shift(); //удаляем повтор.элемент
+  return [...upperPart, ...lowerPart].join('\n');
 }
+// Пример использования
 console.log(pattern(5));
 
 //
@@ -94,35 +96,3 @@ console.log(helper.pageIndex(5)); // 1
 console.log(helper.pageIndex(2)); // 0
 console.log(helper.pageIndex(20)); // -1
 console.log(helper.pageIndex(-10)); // -1
-
-//
-let n = 5;
-for (let i = 1; i <= n; i++) {
-  let str = '*';
-  let space = ' ';
-  console.log(space.repeat(n - i) + str.repeat(i * 2 - 1));
-}
-for (let i = n - 1; i >= 1; i--) {
-  let str = '*';
-  let space = ' ';
-  console.log(space.repeat(n - i) + str.repeat(i * 2 - 1));
-}
-
-function pattern(n) {
-  let res = [];
-  for (let i = 1; i <= n; i++) {
-    let str = ' '.repeat(n - i);
-    for (let j = 1; j < i; j++) {
-      str += j % 10;
-    }
-    for (let j = i; j >= 1; j--) {
-      str += j % 10;
-    }
-    str += ' '.repeat(n - i);
-    res.push(str);
-  }
-  let br = [...res].reverse();
-  br.shift();
-  return [...res, ...br].join('\n');
-}
-console.log(pattern(5));
