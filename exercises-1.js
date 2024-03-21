@@ -43,11 +43,11 @@ getCount();
 
 //
 
-// let a1 = 'Hello';
-// if (1 === 1) {
-//   console.log(a1);
-//   //var a1 = 'World';
-// }
+var a1 = 'Hello';
+if (1 === 1) {
+  console.log(a1);
+  //let a1 = 'World';
+}
 //Что будет в консоле
 //Что измениться если закомментировать строчку 68
 
@@ -585,3 +585,27 @@ new Promise((reject, resolve) => {
   .catch((err) => console.log('error', err))
   .then(console.log);
 console.log(6);
+
+<div id="example">
+  Hello <span style="display: none;">world</span>!
+</div>;
+
+let element = document.getElementById('example');
+
+console.log(element.textContent); // hello
+console.log(element.innerText); // hello world
+
+//
+let a = 5;
+console.log(a);
+
+setTimeout(() => {
+  console.log(a);
+  a = 10;
+}, 0);
+Promise.resolve().then(() => {
+  console.log(a);
+  a = 15;
+});
+
+console.log(a);
